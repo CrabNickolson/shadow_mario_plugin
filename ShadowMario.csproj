@@ -1,0 +1,154 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <AssemblyName>ShadowMarioPlugin</AssemblyName>
+    <Description>Shadow Mario</Description>
+    <Version>1.0.0</Version>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <LangVersion>latest</LangVersion>
+    <RestoreAdditionalProjectSources>
+      https://api.nuget.org/v3/index.json;
+      https://nuget.bepinex.dev/v3/index.json;
+      https://nuget.samboy.dev/v3/index.json
+    </RestoreAdditionalProjectSources>
+    <RootNamespace>ShadowMario</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="BepInEx.Unity.IL2CPP" Version="6.0.0-be.*" IncludeAssets="compile" />
+    <PackageReference Include="BepInEx.PluginInfoProps" Version="2.*" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="PirateBasePlugin">
+      <HintPath>lib\PirateBasePlugin.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Il2Cppmscorlib">
+      <HintPath>lib\Il2Cppmscorlib.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Mimimi.Core">
+      <HintPath>lib\Mimimi.Core.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Mimimi.Core.AssetPipeline.Runtime">
+      <HintPath>lib\Mimimi.Core.AssetPipeline.Runtime.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Mimimi.Core.MiScript">
+      <HintPath>lib\Mimimi.Core.MiScript.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Mimimi.Base">
+      <HintPath>lib\Mimimi.Base.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Mimimi.Base.AddressableAssets">
+      <HintPath>lib\Mimimi.Base.AddressableAssets.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Mimimi.Base.Balancing">
+      <HintPath>lib\Mimimi.Base.Balancing.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Mimimi.Base.Services">
+      <HintPath>lib\Mimimi.Base.Services.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Mimimi.Base.Input">
+      <HintPath>lib\Mimimi.Base.Input.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Mimimi.Base.Sprites">
+      <HintPath>lib\Mimimi.Base.Sprites.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Mimimi.Game">
+      <HintPath>lib\Mimimi.Game.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Mimimi.Game.Animation.Runtime">
+      <HintPath>lib\Mimimi.Game.Animation.Runtime.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Mimimi.Game.AnimationPlayable">
+      <HintPath>lib\Mimimi.Game.AnimationPlayable.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Mimimi.Project">
+      <HintPath>lib\Mimimi.Project.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Rewired_Core">
+      <HintPath>lib\Rewired_Core.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine">
+      <HintPath>lib\UnityEngine.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.CoreModule">
+      <HintPath>lib\UnityEngine.CoreModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.AIModule">
+      <HintPath>lib\UnityEngine.AIModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.AnimationModule">
+      <HintPath>lib\UnityEngine.AnimationModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.AssetBundleModule">
+      <HintPath>lib\UnityEngine.AssetBundleModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.AudioModule">
+      <HintPath>lib\UnityEngine.AudioModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.ParticleSystemModule">
+      <HintPath>lib\UnityEngine.ParticleSystemModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.PhysicsModule">
+      <HintPath>lib\UnityEngine.PhysicsModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.InputModule">
+      <HintPath>lib\UnityEngine.InputModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.InputLegacyModule">
+      <HintPath>lib\UnityEngine.InputLegacyModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.IMGUIModule">
+      <HintPath>lib\UnityEngine.IMGUIModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.TextRenderingModule">
+      <HintPath>lib\UnityEngine.TextRenderingModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.Addressables">
+      <HintPath>lib\Unity.Addressables.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.ResourceManager">
+      <HintPath>lib\Unity.ResourceManager.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="sm64.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="sm64data.bundle">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+</Project>
