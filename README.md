@@ -1,6 +1,6 @@
 ﻿# Shadow Mario
 
-A plugin for Shadow Gambit that lets you play as Mario.
+A [BepInEx](https://github.com/BepInEx/BepInEx) plugin for [Shadow Gambit](https://store.steampowered.com/app/1545560/Shadow_Gambit_The_Cursed_Crew/) that lets you play as Mario.
 
 ## Installation
 
@@ -11,8 +11,8 @@ A plugin for Shadow Gambit that lets you play as Mario.
 ### What you need
 - [BepInEx 6](https://builds.bepinex.dev/projects/bepinex_be)
 	- Click on the newest artifact and then download "BepInEx Unity (IL2CPP) for Windows (x64) games"
-- [PirateBase Plugin](https://github.com/CrabNickolson/pirate_base_plugin/releases)
-- [ShadowMario Plugin](https://github.com/CrabNickolson/shadow_mario_plugin/releases)
+- [Pirate Base Plugin](https://github.com/CrabNickolson/pirate_base_plugin/releases/latest)
+- [Shadow Mario Plugin](https://github.com/CrabNickolson/shadow_mario_plugin/releases/latest)
 - Super Mario 64 (USA) ROM File
 	- You'll have to figure out where to get this yourself (SHA256: 17ce077343c6133f8c9f2d6d6d9a4ab62c8cd2aa57c40aea1f490b4c8bb21d91)
 - A controller. (Mario cannot be controlled with Keyboard/Mouse)
@@ -73,7 +73,7 @@ If you are upgrading from a previous version of Shadow Mario you only have to re
 		- Stars/Coins/Item Blocks are NOT obstacles, so you do not need to regenerate the terrain for them.
 
 ### Config
-There is a config file at `[game folder]\BepInEx\config\com.crabnicholson.shadowmario.cfg`. It contains options to change Mario's gameplay and also some options to tweak performance. Although be careful when you modify the latter, since those can cause the game to become inoperable.
+There is a config file at `[game folder]\BepInEx\config\com.crabnickolson.shadow_mario.cfg`. It contains options to change Mario's gameplay and also some options to tweak performance. Although be careful when you modify the latter, since those can cause the game to become inoperable.
 
 ### Scripting
 The following MiScript commands are available:

@@ -18,7 +18,7 @@ public class Plugin : BasePlugin
     internal static ManualLogSource PluginLog { get; private set; }
     internal static MarioConfig PluginConfig { get; private set; }
 
-    private const string c_pluginGUID = "com.crabnicholson.shadowmario";
+    private const string c_pluginGUID = "com.crabnickolson.shadow_mario";
     private const string c_pluginName = "ShadowMario";
 
     public override void Load()
