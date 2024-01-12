@@ -5,37 +5,40 @@ A [BepInEx](https://github.com/BepInEx/BepInEx) plugin for [Shadow Gambit](https
 ## Installation
 
 ### Before you start
-- This mod has only been tested with the Steam version of Shadow Gambit 1.2.133 on Windows. Other versions may or may not work.
-- This mod might break your save profile. If you care about your save, create a new save profile before installing the mod.
+- This plugin has only been tested with the Steam version of Shadow Gambit 1.2.133 on Windows. Other versions may or may not work.
+- This plugin might break your save profile. If you care about your save, create a new save profile before installing the mod.
 
 ### What you need
 - [BepInEx 6](https://builds.bepinex.dev/projects/bepinex_be)
 	- Click on the newest artifact and then download "BepInEx Unity (IL2CPP) for Windows (x64) games"
 - [Pirate Base Plugin](https://github.com/CrabNickolson/pirate_base_plugin/releases/latest)
+	- Download "com.crabnickolson.pirate_base.x.x.x.zip".
 - [Shadow Mario Plugin](https://github.com/CrabNickolson/shadow_mario_plugin/releases/latest)
+	- Download "com.crabnickolson.shadow_mario.x.x.x.zip ".
 - Super Mario 64 (USA) ROM File
 	- You'll have to figure out where to get this yourself (SHA256: 17ce077343c6133f8c9f2d6d6d9a4ab62c8cd2aa57c40aea1f490b4c8bb21d91)
 - A controller. (Mario cannot be controlled with Keyboard/Mouse)
 
 ### Steps
-If you are upgrading from a previous version of Shadow Mario you only have to repeat step 2.
+If you are upgrading from a previous version of Shadow Mario you only have to repeat step 1 and 3.
 
-1. Unzip the BepInEx folder into the Shadow Gambit game folder. It should look like this:
+1. Make sure Shadow Gambit is not running.
+2. Unzip the BepInEx folder into the Shadow Gambit game folder. It should look like this:
 	
 	![Game Folder Structure](docs/game_folder_structure.png)
 
-2. Unzip the 2 plugin folders into `[game folder]\BepInEx\plugins`.
-3. Copy the Super Mario 64 ROM file into `[game folder]\BepInEx\plugins` and rename it to "baserom.us.z64". The plugins folder should look like this:
+3. Unzip the 2 plugin folders into `[game folder]\BepInEx\plugins`.
+4. Copy the Super Mario 64 ROM file into `[game folder]\BepInEx\plugins` and rename it to "baserom.us.z64". The plugins folder should look like this:
 	
 	![Plugin Folder Structure](docs/plugin_folder_structure.png)
 
-4. Start the game as you normally would and wait for a couple of minutes.
+5. Start the game as you normally would and wait for a couple of minutes.
 	- Only the first time starting the game after installing the mod takes a while. Subsequent game starts should be quicker.
 
 ## Usage
 1. Load into any mission.
 	- Try the Treasure Hunt mission of smaller locations like New Krucbury or Twins of Nerechtemeresch first.
-	- [Or try this modded mission](https://drive.google.com/file/d/1Ww4mW_ECqblWEcSKJ6x6qo7LQKwZlDkk/view?usp=sharing)! See if you can find all 8 stars.
+	- [Or try this modded mission](docs/shadow_mario_demo_mission_00.save)! See if you can find all 8 stars. [Here is how to install modded missions.](https://mod.io/g/shadow-gambit/r/how-to-play-a-mod)
 2. Select your spawn location and characters and start the mission.
 3. Select the player character you want to replace with Mario and hold the right stick down for 3 seconds.
 4. The game will freeze for a while (this can take a couple of minutes in the bigger missions)
@@ -52,7 +55,7 @@ If you are upgrading from a previous version of Shadow Mario you only have to re
 - You should be able to save and load as normal.
 - You can use some objects (chests, environment kills, doors, etc) by punching them.
 - NPCs are at first only knocked out by Mario. You need to ground pound/slide into them again to kill them.
-- You can pick up and throw incapacitated enemies by punching next to them.
+- You can pick up and throw incapacitated enemies (like Bowser) by punching next to them.
 - You can revive other players by ground pounding them.
 - Use the teleport cheat if you get stuck (Left D-Pad + Right Bumper).
 
@@ -108,7 +111,7 @@ sm64-ocean-is-lava
 - The game sometimes crashes, usually when exiting a mission.
 - Performance gets bad, when many objects are spawned.
 	- This can be fixed sometimes by saving and loading.
-- Water level in Furnace is broken.
+- Water level in Iron Bay is broken.
 - The game's music stops when you spawn the first Mario.
 - Probably lots more.
 
