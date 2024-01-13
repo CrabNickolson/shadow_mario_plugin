@@ -1,6 +1,8 @@
 ﻿# Shadow Mario
 
-A [BepInEx](https://github.com/BepInEx/BepInEx) plugin for [Shadow Gambit](https://store.steampowered.com/app/1545560/Shadow_Gambit_The_Cursed_Crew/) that lets you play as Mario.
+This is a [BepInEx](https://github.com/BepInEx/BepInEx) plugin for [Shadow Gambit](https://store.steampowered.com/app/1545560/Shadow_Gambit_The_Cursed_Crew/) that lets you play as Mario's incarnation from Super Mario 64.
+
+ ![Intro](docs/intro.jpg)
 
 ## Installation
 
@@ -9,6 +11,7 @@ A [BepInEx](https://github.com/BepInEx/BepInEx) plugin for [Shadow Gambit](https
 - This plugin might break your save profile. If you care about your save, create a new save profile before installing the mod.
 
 ### What you need
+- [Shadow Gambit](https://store.steampowered.com/app/1545560/Shadow_Gambit_The_Cursed_Crew/)
 - [BepInEx 6](https://builds.bepinex.dev/projects/bepinex_be)
 	- Click on the newest artifact and then download "BepInEx Unity (IL2CPP) for Windows (x64) games"
 - [Pirate Base Plugin](https://github.com/CrabNickolson/pirate_base_plugin/releases/latest)
@@ -33,19 +36,19 @@ If you are upgrading from a previous version of Shadow Mario you only have to re
 	![Plugin Folder Structure](docs/plugin_folder_structure.png)
 
 5. Start the game as you normally would and wait for a couple of minutes.
-	- Only the first time starting the game after installing the mod takes a while. Subsequent game starts should be quicker.
+	- Only the first time starting the game after installing the plugin takes a while. Subsequent game starts should be quicker.
 
 ## Usage
 1. Load into any mission.
 	- Try the Treasure Hunt mission of smaller locations like New Krucbury or Twins of Nerechtemeresch first.
-	- [Or try this modded mission](docs/shadow_mario_demo_mission_00.save)! See if you can find all 8 stars. [Here is how to install modded missions.](https://mod.io/g/shadow-gambit/r/how-to-play-a-mod)
+	- [Or try this modded mission](docs/shadow_mario_demo_mission_00.save)! See if you can find all 8 stars. [Here is a guide on how to install modded missions.](https://mod.io/g/shadow-gambit/r/how-to-play-a-mod)
 2. Select your spawn location and characters and start the mission.
 3. Select the player character you want to replace with Mario and hold the right stick down for 3 seconds.
 4. The game will freeze for a while (this can take a couple of minutes in the bigger missions)
 5. There should now be an Italian plumber in your game!
 6. You can repeat this process with other player characters to spawn multiple Marios, however this has a heavy performance impact!
 
- ![Installation Demonstration](docs/installation_demonstration.png)
+ ![Installation Demonstration](docs/installation_demonstration.jpg)
 
 ### Gameplay
 - Move with the Left Stick.
