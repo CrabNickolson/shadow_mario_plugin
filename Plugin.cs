@@ -12,7 +12,7 @@ namespace ShadowMario;
 
 [BepInPlugin(c_pluginGUID, c_pluginName, MyPluginInfo.PLUGIN_VERSION)]
 [BepInProcess(PirateBase.Plugin.c_processName)]
-[BepInDependency(PirateBase.Plugin.c_pluginGUID)]
+[BepInDependency(PirateBase.Plugin.c_pluginGUID, "1.x.x")]
 public class Plugin : BasePlugin
 {
     internal static ManualLogSource PluginLog { get; private set; }
