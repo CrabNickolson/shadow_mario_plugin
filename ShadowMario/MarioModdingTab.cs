@@ -4,7 +4,6 @@ using Il2CppInterop.Runtime.Injection;
 using UnityEngine;
 using MiIngameToolHandles;
 using PirateBase;
-using LibSM64;
 
 using Vector3NET = System.Numerics.Vector3;
 
@@ -86,16 +85,7 @@ internal class MarioModdingTab : MiModdingTab
         if (GUILayout.Button("Regenerate Terrain"))
         {
             if (MarioSceneHandler.instance != null)
-                MarioSceneHandler.instance.RegenerateTerrain();
-            if (SM64Context.surfaceStreaming != null)
-            {
-                GameEvents.RunNextUpdate(() =>
-                {
-                    // need to wait a frame so old terrains are actually gone
-                    SM64Context.surfaceStreaming.updateTerrains();
-                    SM64Context.surfaceStreaming.forceUpdateCullingState();
-                });
-            }
+                MarioSceneHandler.instance.RegenerateTerrainAndUpdateStreaming();
         }
 
         if (target != null)
@@ -202,7 +192,7 @@ internal class MarioModdingTab : MiModdingTab
     protected static float roundToNearest(float _value, float _roundTo)
     {
         float sign = System.Math.Sign(_value);
-        float absValue = Mathf.Abs(_value);
+        float absValue = System.Math.Abs(_value);
         float remainder = absValue % _roundTo;
 
         if (System.Math.Abs(remainder) > _roundTo / 2)

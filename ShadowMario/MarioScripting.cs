@@ -1,7 +1,6 @@
 ﻿using BepInEx;
 using BepInEx.Unity.IL2CPP;
 using Il2CppInterop.Runtime.Injection;
-using HarmonyLib;
 using System.Linq;
 using UnityEngine;
 using PirateBase;
@@ -165,16 +164,7 @@ internal class MarioScripting : Il2CppSystem.Object
             var obstacle = MarioObstacle.Spawn(new Vector3NET(0, goOcean.transform.position.y - 0.5f, 0), MarioObstacle.ObstacleType.Lava, _disableSurfaceCulling: true);
             obstacle.trans.localScale = new Vector3(256, 1, 256);
 
-            MarioSceneHandler.instance.RegenerateTerrain();
-            if (SM64Context.surfaceStreaming != null)
-            {
-                GameEvents.RunNextUpdate(() =>
-                {
-                    // need to wait a frame so old terrains are actually gone
-                    SM64Context.surfaceStreaming.updateTerrains();
-                    SM64Context.surfaceStreaming.forceUpdateCullingState();
-                });
-            }
+            MarioSceneHandler.instance.RegenerateTerrainAndUpdateStreaming();
         }
     }
 }

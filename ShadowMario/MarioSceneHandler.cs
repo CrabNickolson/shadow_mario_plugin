@@ -280,4 +280,18 @@ internal class MarioSceneHandler : MonoBehaviour
             Plugin.PluginConfig.debug.displayGenerationMesh.Value);
         m_terrainGen.generateMeshes();
     }
+
+    public void RegenerateTerrainAndUpdateStreaming()
+    {
+        RegenerateTerrain();
+        if (SM64Context.surfaceStreaming != null)
+        {
+            GameEvents.RunNextUpdate(() =>
+            {
+                // Need to wait a frame so old terrains are actually gone.
+                SM64Context.surfaceStreaming.updateTerrains();
+                SM64Context.surfaceStreaming.forceUpdateCullingState();
+            });
+        }
+    }
 }

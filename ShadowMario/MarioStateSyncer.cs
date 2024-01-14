@@ -53,6 +53,10 @@ internal class MarioStateSyncer : ModSaveable
     private MiAnimAction m_groundPoundAction;
     private MiAnimAction m_diveKillAction;
 
+    private MiCharacter.MiCharacterEvent m_onCharDamaged;
+    private MiCharacter.MiCharacterEvent m_onCharDeath;
+    private MiCharacter.MiCharacterEvent m_onCharRevived;
+
     private const int c_totalPortraitDelayFrames = 16;
 
     public static readonly int marioColliderMask = (1 << (int)MiLayer.Walkable) | (1 << (int)MiLayer.Terrain) | (1 << (int)MiLayer.Occluder);
@@ -92,9 +96,8 @@ internal class MarioStateSyncer : ModSaveable
         ClassInjector.DerivedConstructorBody(this);
     }
 
-    public override void Awake()
+    public override void AwakeDelayed()
     {
-        //base.Awake();
         init();
     }
 
@@ -408,10 +411,6 @@ internal class MarioStateSyncer : ModSaveable
         if (_cap != MarioCap.Normal && remainingCapTime > 0)
             GiveCap(_cap, remainingCapTime, true);
     }
-
-    private MiCharacter.MiCharacterEvent m_onCharDamaged;
-    private MiCharacter.MiCharacterEvent m_onCharDeath;
-    private MiCharacter.MiCharacterEvent m_onCharRevived;
 
     [HideFromIl2Cpp]
     private void registerCallbacks()
