@@ -2,7 +2,7 @@
 
 This is an unofficial [BepInEx](https://github.com/BepInEx/BepInEx) plugin for [Shadow Gambit](https://store.steampowered.com/app/1545560/Shadow_Gambit_The_Cursed_Crew/) that lets you play as Mario's incarnation from Super Mario 64.
 
- ![Intro](docs/intro.jpg)
+[<img src="docs/intro.jpg">](https://youtu.be/q3AZxYEleCs)
 
 ## Installation
 
