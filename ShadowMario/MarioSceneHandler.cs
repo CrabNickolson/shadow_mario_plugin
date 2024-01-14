@@ -243,7 +243,7 @@ internal class MarioSceneHandler : MonoBehaviour
             var originChar = _entityOrigin.TryCast<MiCharacter>();
             if (originChar != null && MarioStateSyncer.CharIsMario(originChar))
             {
-                var noiseSettings = CharacterUtility.CreateNoiseSettings(originChar);
+                var noiseSettings = ModCharacterUtility.CreateNoiseSettings(originChar);
                 noiseSettings.emitDuration = new BalancedFloat(0.5f);
                 noiseSettings.emitHeight = new BalancedFloat(4);
                 noiseSettings.emitRadius = new BalancedFloat(Plugin.PluginConfig.gameplay.attackNoiseRadius.Value);

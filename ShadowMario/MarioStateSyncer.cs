@@ -112,23 +112,23 @@ internal class MarioStateSyncer : ModSaveable
     {
         base.serializeMod(ref _helper);
 
-        _helper.Serialize(0, m_character);
-        _helper.Serialize(1, m_hitbox);
-        _helper.Serialize(2, m_hurtbox);
+        _helper.SerializeUnityObject(0, m_character);
+        _helper.SerializeUnityObject(1, m_hitbox);
+        _helper.SerializeUnityObject(2, m_hurtbox);
 
         _helper.Serialize(3, (uint)m_lastAction);
         _helper.Serialize(4, (uint)m_lastFlags);
-        _helper.Serialize(5, m_lastVelocity.BoxIl2CppObject());
+        _helper.Serialize(5, m_lastVelocity);
         _helper.Serialize(6, m_hue);
 
         _helper.Serialize(7, (int)m_state);
-        _helper.Serialize(8, m_lastPosition.BoxIl2CppObject());
+        _helper.Serialize(8, m_lastPosition);
 
         _helper.Serialize(9, (int)m_cap);
         _helper.Serialize(10, m_capDuration);
         _helper.Serialize(11, m_capStartTime);
 
-        _helper.Serialize(12, m_spinningCharacter);
+        _helper.SerializeUnityObject(12, m_spinningCharacter);
         _helper.Serialize(13, m_spinningCharHideable);
 
         _helper.Serialize(14, (int)m_capOnDoor);
@@ -139,9 +139,9 @@ internal class MarioStateSyncer : ModSaveable
     {
         base.deserializeMod(ref _helper);
 
-        _helper.Deserialize(0, ref m_character);
-        _helper.Deserialize(1, ref m_hitbox);
-        _helper.Deserialize(2, ref m_hurtbox);
+        _helper.DeserializeUnityObject(0, ref m_character);
+        _helper.DeserializeUnityObject(1, ref m_hitbox);
+        _helper.DeserializeUnityObject(2, ref m_hurtbox);
 
         if (_helper.dictFields.TryGetValue(3, out var value3))
             m_lastAction = (SM64MarioAction)value3.Unbox<uint>();
@@ -159,7 +159,7 @@ internal class MarioStateSyncer : ModSaveable
         _helper.Deserialize(10, ref m_capDuration);
         _helper.Deserialize(11, ref m_capStartTime);
 
-        _helper.Deserialize(12, ref m_spinningCharacter);
+        _helper.DeserializeUnityObject(12, ref m_spinningCharacter);
         _helper.Deserialize(13, ref m_spinningCharHideable);
 
         if (_helper.dictFields.TryGetValue(14, out var value14))
@@ -484,7 +484,7 @@ internal class MarioStateSyncer : ModSaveable
         if (currentHealth != 0 && (m_lastHealth - currentHealth) > 30 && !m_character.health.bDead())
         {
             m_transferMarioDamageFrame = MiGameTime.frameCountSaved;
-            var damageOptions = CharacterUtility.CreateDamageOptions(1, m_character, Skill.SkillType.Kill,
+            var damageOptions = ModCharacterUtility.CreateDamageOptions(1, m_character, Skill.SkillType.Kill,
                 _fDurationVisible: 1, _v3InDirection: Vector3.right); // setting nullables to avoid random exceptions
             m_character.impulseHandler.damage(damageOptions);
         }
@@ -513,7 +513,7 @@ internal class MarioStateSyncer : ModSaveable
         if (currentAction == SM64MarioAction.GROUND_POUND_LAND && m_lastAction != SM64MarioAction.GROUND_POUND_LAND
             && Plugin.PluginConfig.gameplay.groundPoundNoiseRadius.Value > 0)
         {
-            var noiseSettings = CharacterUtility.CreateNoiseSettings(m_character);
+            var noiseSettings = ModCharacterUtility.CreateNoiseSettings(m_character);
             noiseSettings.emitDuration = new BalancedFloat(0.5f);
             noiseSettings.emitHeight = new BalancedFloat(4);
             noiseSettings.emitRadius = new BalancedFloat(Plugin.PluginConfig.gameplay.groundPoundNoiseRadius.Value);
@@ -686,7 +686,7 @@ internal class MarioStateSyncer : ModSaveable
             else if (character.health.bDeadFinal() && !character.processes.bIsExecuting(MiCharacterProcess.Type.Revive) && character.m_eCharacter.bIsPlayer())
             {
                 if (action == SM64MarioAction.GROUND_POUND || action == SM64MarioAction.GROUND_POUND_LAND)
-                    character.processes.bStart(CharacterUtility.CreateReviveOptions(m_character, character, Skill.SkillType.None));
+                    character.processes.bStart(ModCharacterUtility.CreateReviveOptions(m_character, character, Skill.SkillType.None));
             }
             else if (actionIsPunching(action))
             {
@@ -754,7 +754,7 @@ internal class MarioStateSyncer : ModSaveable
         if (flagHasMetalCap(m_mario.flags))
             _charTarget.health.setShieldActive(false);
 
-        var killOptions = CharacterUtility.CreateDamageOptions(1, m_character, Skill.SkillType.Kill, _fDurationVisible: durationVisible,
+        var killOptions = ModCharacterUtility.CreateDamageOptions(1, m_character, Skill.SkillType.Kill, _fDurationVisible: durationVisible,
             _v3InDirection: dir, _actionFall: actionFall, _bSkipAnimation: _skipAnimation);
 
         _charTarget.impulseHandler.damage(killOptions);
@@ -798,7 +798,7 @@ internal class MarioStateSyncer : ModSaveable
 
         if (Plugin.PluginConfig.gameplay.onlyKillAfterKnockOut.Value && _charTarget.m_eCharacter != MiCharacterType.Player)
         {
-            var knockoutOptions = CharacterUtility.CreateKnockoutOptions(m_character, m_character, Skill.SkillType.Knockout,
+            var knockoutOptions = ModCharacterUtility.CreateKnockoutOptions(m_character, m_character, Skill.SkillType.Knockout,
                 _fDurationVisible: durationVisible, _actionFall: actionFall);
             _charTarget.impulseHandler.knockout(knockoutOptions);
             if (!m_knockedOutCharsDict.TryAdd(_charTarget.Pointer, MiGameTime.timeSaved))
@@ -806,7 +806,7 @@ internal class MarioStateSyncer : ModSaveable
         }
         else
         {
-            var killOptions = CharacterUtility.CreateDamageOptions(1, m_character, Skill.SkillType.Kill, _fDurationVisible: durationVisible,
+            var killOptions = ModCharacterUtility.CreateDamageOptions(1, m_character, Skill.SkillType.Kill, _fDurationVisible: durationVisible,
                 _v3InDirection: dir, _actionFall: actionFall);
             _charTarget.impulseHandler.damage(killOptions);
         }
@@ -858,12 +858,12 @@ internal class MarioStateSyncer : ModSaveable
             {
                 if (hit.mask == MiAreaFlags.c_flagWater)
                 {
-                    var killOptions = CharacterUtility.CreateDamageOptions(99, m_character, Skill.SkillType.Kill, _bSkipAnimation: true);
+                    var killOptions = ModCharacterUtility.CreateDamageOptions(99, m_character, Skill.SkillType.Kill, _bSkipAnimation: true);
                     _charTarget.impulseHandler.damage(killOptions);
                 }
                 else
                 {
-                    var knockoutOptions = CharacterUtility.CreateKnockoutOptions(m_character, m_character, Skill.SkillType.Knockout, _bSkipAnimation: true);
+                    var knockoutOptions = ModCharacterUtility.CreateKnockoutOptions(m_character, m_character, Skill.SkillType.Knockout, _bSkipAnimation: true);
                     _charTarget.impulseHandler.knockout(knockoutOptions);
                 }
             }
@@ -890,7 +890,7 @@ internal class MarioStateSyncer : ModSaveable
 
             bool shotInWater = JumpHelper.bDisposingWater(hit.position);
 
-            var options = CharacterUtility.CreateThrowOptions(
+            var options = ModCharacterUtility.CreateThrowOptions(
                 _charOrigin: m_character,
                 _charTarget: _charTarget,
                 _flying: flyingInstance,
