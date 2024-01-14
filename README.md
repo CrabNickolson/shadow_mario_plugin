@@ -1,6 +1,6 @@
 ﻿# Shadow Mario
 
-This is a [BepInEx](https://github.com/BepInEx/BepInEx) plugin for [Shadow Gambit](https://store.steampowered.com/app/1545560/Shadow_Gambit_The_Cursed_Crew/) that lets you play as Mario's incarnation from Super Mario 64.
+This is an unofficial [BepInEx](https://github.com/BepInEx/BepInEx) plugin for [Shadow Gambit](https://store.steampowered.com/app/1545560/Shadow_Gambit_The_Cursed_Crew/) that lets you play as Mario's incarnation from Super Mario 64.
 
  ![Intro](docs/intro.jpg)
 
@@ -13,14 +13,15 @@ This is a [BepInEx](https://github.com/BepInEx/BepInEx) plugin for [Shadow Gambi
 ### What you need
 - [Shadow Gambit](https://store.steampowered.com/app/1545560/Shadow_Gambit_The_Cursed_Crew/)
 - [BepInEx 6](https://builds.bepinex.dev/projects/bepinex_be)
-	- Click on the newest artifact and then download "BepInEx Unity (IL2CPP) for Windows (x64) games"
+	- Click on the newest artifact and then download "BepInEx Unity (IL2CPP) for Windows (x64) games".
+	- If you can't run the plugin with the latest BepInEx artifact, try using artifact #682 instead.
 - [Pirate Base Plugin](https://github.com/CrabNickolson/pirate_base_plugin/releases/latest)
 	- Download "com.crabnickolson.pirate_base.x.x.x.zip".
 - [Shadow Mario Plugin](https://github.com/CrabNickolson/shadow_mario_plugin/releases/latest)
-	- Download "com.crabnickolson.shadow_mario.x.x.x.zip ".
+	- Download "com.crabnickolson.shadow_mario.x.x.x.zip".
 - Super Mario 64 (USA) ROM File
-	- You'll have to figure out where to get this yourself (SHA256: 17ce077343c6133f8c9f2d6d6d9a4ab62c8cd2aa57c40aea1f490b4c8bb21d91)
-- A controller. (Mario cannot be controlled with Keyboard/Mouse)
+	- You'll have to figure out where to get this yourself (SHA256: 17ce077343c6133f8c9f2d6d6d9a4ab62c8cd2aa57c40aea1f490b4c8bb21d91).
+- A controller (Mario cannot be controlled with Keyboard/Mouse).
 
 ### Steps
 If you are upgrading from a previous version of Shadow Mario you only have to repeat step 1 and 3.
@@ -44,7 +45,7 @@ If you are upgrading from a previous version of Shadow Mario you only have to re
 	- [Or try this modded mission](docs/shadow_mario_demo_mission_00.save)! See if you can find all 8 stars. [Here is a guide on how to install modded missions.](https://mod.io/g/shadow-gambit/r/how-to-play-a-mod)
 2. Select your spawn location and characters and start the mission.
 3. Select the player character you want to replace with Mario and hold the right stick down for 3 seconds.
-4. The game will freeze for a while (this can take a couple of minutes in the bigger missions)
+4. The game will freeze for a while (this can take a couple of minutes in the bigger missions).
 5. There should now be an Italian plumber in your game!
 6. You can repeat this process with other player characters to spawn multiple Marios, however this has a heavy performance impact!
 
@@ -58,12 +59,14 @@ If you are upgrading from a previous version of Shadow Mario you only have to re
 - You should be able to save and load as normal.
 - You can use some objects (chests, environment kills, doors, etc) by punching them.
 - NPCs are at first only knocked out by Mario. You need to ground pound/slide into them again to kill them.
-- You can pick up and throw incapacitated enemies (like Bowser) by punching next to them.
-- You can revive other players by ground pounding them.
-- Use the teleport cheat if you get stuck (Left D-Pad + Right Bumper).
+- You can pick up and throw incapacitated NPCs (like Bowser) by punching next to them.
+- You can revive other players and Marios by ground pounding them.
+- Use the teleport cheat if you get stuck (hold Left D-Pad + Right Bumper).
+	- If this does not work you probably don't have cheats enabled. You can do so by opening the game's properties on Steam and adding `thisisnotsupported2` to the launch options. Then restart the game.
 
 ### Save Editing
 - You can use the [Modding Tools](https://mod.io/g/shadow-gambit/r/getting-started) to place obstacles, blocks, coins and stars.
+- To open the modding tools press Ctrl + Alt + M.
 - To spawn objects:
 	- Select the "Mario" tab in the Modding Tools window.
 	- Select one of the following: Coin, Star, Block Fly, Block Metal, Obstacle Ice, Obstacle Lava.
@@ -125,3 +128,4 @@ Used Libraries:
 - [BepInEx](https://github.com/BepInEx/BepInEx)
 - [libsm64](https://github.com/libsm64/libsm64)
 - [Marching-Cubes](https://github.com/Scrawk/Marching-Cubes)
+- [PirateBase](https://github.com/CrabNickolson/pirate_base_plugin)
