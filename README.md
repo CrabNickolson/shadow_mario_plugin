@@ -24,8 +24,6 @@ This is an unofficial [BepInEx](https://github.com/BepInEx/BepInEx) plugin for [
 - A controller (Mario cannot be controlled with Keyboard/Mouse).
 
 ### Steps
-If you are upgrading from a previous version of Shadow Mario you only have to repeat step 1 and 3.
-
 1. Make sure Shadow Gambit is not running.
 2. Unzip the BepInEx folder into the Shadow Gambit game folder. It should look like this:
 	
@@ -80,6 +78,7 @@ If you are upgrading from a previous version of Shadow Mario you only have to re
 	- Marios physics work best, if walls are at 90º angles. Press the "Snap Rotation Of Selected" button to help with that.
 	- Click "Regenerate Terrain". You must click this every time you add or move an obstacle.
 		- Stars/Coins/Item Blocks are NOT obstacles, so you do not need to regenerate the terrain for them.
+- You can export your Save Mod as you normally would. However, people that want to play your mod will also need to have the Shadow Mario plugin installed.
 
 ### Config
 There is a config file at `[game folder]\BepInEx\config\com.crabnickolson.shadow_mario.cfg`. It contains options to change Mario's gameplay and also some options to tweak performance. Although be careful when you modify the latter, since those can cause the game to become inoperable.
