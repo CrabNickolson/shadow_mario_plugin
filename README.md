@@ -15,6 +15,7 @@ This is an unofficial [BepInEx](https://github.com/BepInEx/BepInEx) plugin for [
 - [BepInEx 6](https://builds.bepinex.dev/projects/bepinex_be)
 	- Click on the newest artifact and then download "BepInEx Unity (IL2CPP) for Windows (x64) games".
 	- If you can't run the plugin with the latest BepInEx artifact, try using artifact #682 instead.
+	<br><img src="docs/bepinex_download.png" width="450">
 - [Pirate Base Plugin](https://github.com/CrabNickolson/pirate_base_plugin/releases/latest)
 	- Download "com.crabnickolson.pirate_base.x.x.x.zip".
 - [Shadow Mario Plugin](https://github.com/CrabNickolson/shadow_mario_plugin/releases/latest)
@@ -26,14 +27,10 @@ This is an unofficial [BepInEx](https://github.com/BepInEx/BepInEx) plugin for [
 ### Steps
 1. Make sure Shadow Gambit is not running.
 2. Unzip the BepInEx folder into the Shadow Gambit game folder. It should look like this:
-	
-	![Game Folder Structure](docs/game_folder_structure.png)
-
+	<br><img src="docs/game_folder_structure.png" width="450">
 3. Unzip the 2 plugin folders into `[game folder]\BepInEx\plugins`.
 4. Copy the Super Mario 64 ROM file into `[game folder]\BepInEx\plugins` and rename it to "baserom.us.z64". The plugins folder should look like this:
-	
-	![Plugin Folder Structure](docs/plugin_folder_structure.png)
-
+	<br><img src="docs/plugin_folder_structure.png" width="450">
 5. Start the game as you normally would and wait for a couple of minutes.
 	- Only the first time starting the game after installing the plugin takes a while. Subsequent game starts should be quicker.
 
