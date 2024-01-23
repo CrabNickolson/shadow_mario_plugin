@@ -25,14 +25,15 @@ This is an unofficial [BepInEx](https://github.com/BepInEx/BepInEx) plugin for [
 - A controller (Mario cannot be controlled with Keyboard/Mouse).
 
 ### Steps
-1. Make sure Shadow Gambit is not running.
-2. Open Shadow Gambits game folder by right clicking on the game in Steam and selecting "Manage > Browse Local Files".
-3. Unzip the BepInEx folder into the Shadow Gambit game folder. It should look like this:
+1. Make sure you have all of the required files from the "What you need" section above ready.
+2. Make sure Shadow Gambit is not running.
+3. Open Shadow Gambits game folder by right clicking on the game in Steam and selecting "Manage > Browse Local Files".
+4. Unzip the BepInEx folder into the Shadow Gambit game folder. It should look like this:
 	<br><img src="docs/game_folder_structure.png" width="450">
-4. Unzip the 2 plugin folders into `[game folder]\BepInEx\plugins`.
-5. Copy the Super Mario 64 ROM file into `[game folder]\BepInEx\plugins` and rename it to "baserom.us.z64". The plugins folder should look like this:
+5. Unzip the 2 plugin folders into `[game folder]\BepInEx\plugins`.
+6. Copy the Super Mario 64 ROM file into `[game folder]\BepInEx\plugins` and rename it to "baserom.us.z64". The plugins folder should look like this:
 	<br><img src="docs/plugin_folder_structure.png" width="450">
-6. Start the game as you normally would and wait for a couple of minutes.
+7. Start the game as you normally would and wait for a couple of minutes.
 	- Only the first time starting the game after installing the plugin takes a while. Subsequent game starts should be quicker.
 
 ## Usage
