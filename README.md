@@ -8,7 +8,7 @@ This is an unofficial [BepInEx](https://github.com/BepInEx/BepInEx) plugin for [
 
 ### Before you start
 - This plugin has only been tested with the Steam version of Shadow Gambit 1.2.133 on Windows. Other versions may or may not work.
-- This plugin might break your save profile. If you care about your save, create a new save profile before installing the mod.
+- This plugin might break your save profile. If you care about your save, create a new save profile before installing this plugin.
 
 ### What you need
 - [Shadow Gambit](https://store.steampowered.com/app/1545560/Shadow_Gambit_The_Cursed_Crew/)
@@ -26,12 +26,13 @@ This is an unofficial [BepInEx](https://github.com/BepInEx/BepInEx) plugin for [
 
 ### Steps
 1. Make sure Shadow Gambit is not running.
-2. Unzip the BepInEx folder into the Shadow Gambit game folder. It should look like this:
+2. Open Shadow Gambits game folder by right clicking on the game in Steam and selecting "Manage > Browse Local Files".
+3. Unzip the BepInEx folder into the Shadow Gambit game folder. It should look like this:
 	<br><img src="docs/game_folder_structure.png" width="450">
-3. Unzip the 2 plugin folders into `[game folder]\BepInEx\plugins`.
-4. Copy the Super Mario 64 ROM file into `[game folder]\BepInEx\plugins` and rename it to "baserom.us.z64". The plugins folder should look like this:
+4. Unzip the 2 plugin folders into `[game folder]\BepInEx\plugins`.
+5. Copy the Super Mario 64 ROM file into `[game folder]\BepInEx\plugins` and rename it to "baserom.us.z64". The plugins folder should look like this:
 	<br><img src="docs/plugin_folder_structure.png" width="450">
-5. Start the game as you normally would and wait for a couple of minutes.
+6. Start the game as you normally would and wait for a couple of minutes.
 	- Only the first time starting the game after installing the plugin takes a while. Subsequent game starts should be quicker.
 
 ## Usage
